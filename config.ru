@@ -1,4 +1,4 @@
-require 'ucheke.rb'
+require './ucheke.rb'
 
 set :environment, :production
 set :run, false
