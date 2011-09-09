@@ -1,6 +1,8 @@
-require './ucheke.rb'
+require 'rubygems'
+require 'bundler'
 
-set :environment, :production
-set :run, false
+Bundler.require
+
+require './ucheke.rb'
 
 run Sinatra::Application
