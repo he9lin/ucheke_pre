@@ -1,0 +1,2 @@
+Mail.defaults do
+end

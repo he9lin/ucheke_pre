@@ -1,6 +1,7 @@
-require 'sinatra'
+$:.unshift File.join(Dir.getwd, 'lib')
 
-# require 'lib/mail'
+require 'sinatra'
+require 'mailer'
 
 get '/'  do
   erb :home
