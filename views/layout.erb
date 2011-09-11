@@ -9,6 +9,9 @@
   </head>
   <body>
     <div id="container">
+      <% if flash_message %>
+        <div id="flash_message"><%= flash_message %></div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

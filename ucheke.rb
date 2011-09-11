@@ -4,22 +4,33 @@ require 'sinatra'
 require 'core_ext'
 require 'mailer'
 
-get '/'  do
-  erb :home
-end
+class Ucheke < Sinatra::Base
+  enable :sessions
 
-post '/mail' do
-  mail = Mail.new
-  mail.to      = MAILER_CONFIG[:email]
-  mail.from    = "#{params[:name]} <#{params[:email]}>"
-  mail.subject = "New inquiry"
-  mail.body    = params[:content]
-  mail.deliver
-  # text_part do
-  #   body 'Hello world in text'
-  # end
-  # html_part do
-  #   content_type 'text/html; charset=UTF-8'
-  #   body '<b>Hello world in HTML</b>'
-  # end
+  helpers do
+    def redirect_with_flash(url, message)
+      session[:flash] = message
+      redirect url
+    end
+  
+    def flash_message
+      message = session[:flash]
+      session[:flash] = nil
+      message
+    end
+  end
+  
+  get '/'  do
+    erb :home, :locals => { :flash_message => flash_message }
+  end
+
+  post '/mail' do
+    mail = Mail.new
+    mail.to      = MAILER_CONFIG[:email]
+    mail.from    = MAILER_CONFIG[:email]
+    mail.subject = "#{params[:name]} from #{params[:email]} has just sent this email"
+    mail.body    = params[:content]
+    mail.deliver
+    redirect_with_flash '/', 'Message has been sent successfully'
+  end
 end

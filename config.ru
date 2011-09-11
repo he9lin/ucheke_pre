@@ -5,4 +5,4 @@ Bundler.require
 
 require './ucheke.rb'
 
-run Sinatra::Application
+run Ucheke

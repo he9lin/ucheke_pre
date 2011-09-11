@@ -4,7 +4,7 @@ class UchekeTest < Test::Unit::TestCase
   include Capybara::DSL
   
   def setup
-    Capybara.app = ::Sinatra::Application.new
+    Capybara.app = Ucheke
     Mail::TestMailer.deliveries.clear
   end
   
@@ -22,7 +22,16 @@ class UchekeTest < Test::Unit::TestCase
     end
 
     should "display successful message" do
-      # 
+      assert page.has_content?('success')
+    end
+    
+    should "redirect to home page" do
+      assert_equal '/', page.current_path
+    end
+    
+    should "resets flash when visit home again" do
+      visit "/"
+      assert page.has_no_content?('success')
     end
   end
 end

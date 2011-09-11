@@ -1,6 +1,4 @@
 address: "smtp.gmail.com"
 port: 587
 domain: "www.ucheku.com"
-user_name: "heyook.test"
-password: "HeyookTest2010"
 email: "heyook.test@gmail.com"
