@@ -6,6 +6,7 @@ require 'mailer'
 
 class Ucheke < Sinatra::Base
   enable :sessions
+  set :root, File.dirname(__FILE__)
 
   helpers do
     def redirect_with_flash(url, message)

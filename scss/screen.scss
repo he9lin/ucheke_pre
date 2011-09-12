@@ -1,2 +1,104 @@
 @import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/text-shadow";
+@import "blueprint/grid";
+$blueprint-container-size: 750px;
+$main-header-color: #eb7926;
+$font-color: #608213;
+$form-bg-color: #c7da9c;
+$dark-font-color: darken($font-color, 1%);
+$light-font-color: lighten($font-color, 10%);
+$button-bg-color: darken($form-bg-color, 2%);
 
+body {
+  background: url(/images/tile.png) repeat;
+  padding-top: 70px;
+  #flash_message {
+    @include border-radius;
+    margin: 0 auto;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    background-color: $button-bg-color;
+    border: 3px solid $light-font-color;
+    text-align: center;
+  }
+  #container {
+    @include container;
+    color: $font-color;
+    header#header {
+      h1 {
+        margin-top: 40px;
+        color: $main-header-color;
+        font-size: 3em;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 80px;
+      }
+    }
+    h3.contact { 
+      color: $light-font-color;
+      font-size: 1.2em;
+      margin-bottom: 24px;
+    }
+  }
+  form#mail-form {
+    overflow: auto;
+    label {
+      display: block;
+      font-size: 0.9em;
+      padding-left: 5px;
+      padding-bottom: 5px;
+    }
+    p.button {
+      padding: 10px 0 20px 535px;
+      float: left;
+      input[type=submit] {
+        @include border-radius;
+        @include text-shadow;
+        cursor: pointer;
+        width: 120px;
+        line-height: 34px;
+        font-size: 1.2em;
+        font-weight: bold;
+        background-color: $button-bg-color;
+        color: $font-color;
+        border: 1px solid $button-bg-color;
+        text-transform: uppercase;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    input[type=text], textarea {
+      @include border-radius;
+      background-color: $form-bg-color;
+      color: $dark-font-color;
+      border: 1px solid #fff;
+      font-size: 1em;
+    }
+    textarea#content {
+      margin: 0px;
+      padding: 5px;
+      width: 360px;
+      height: 120px;
+      background: $form-bg-color url(/images/pencil_64.png) bottom right no-repeat;
+    }
+    input[type=text] {
+      width: 206px;
+      height: 22px;
+      padding: 5px;
+    }
+    .fields {
+      float: left;
+      &.left {
+        width: 250px;
+        float: left;
+        margin-right: 50px;
+      }
+      &.right {
+        float: left;
+        width: $blueprint-container-size - 300px;
+      }
+    }
+  }
+}

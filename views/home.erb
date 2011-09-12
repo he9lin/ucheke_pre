@@ -1,16 +1,15 @@
+<h3 class="contact">联系我们</h3>
 <form action="/mail" method="post" id="mail-form">
-  <div class="fields">
-    <label for="name">Name</label><br />
-    <input type="text" id="name" name="name" />
-  </div>
-  <div class="fields">
-    <label for="email">Email</label><br />
+  <div class="fields left">
+    <label for="name">姓名</label>
+    <input type="text" id="name" name="name" /><br /><br />
+    <label for="email">邮箱</label>
     <input type="text" id="email" name="email" />
   </div>
-  <div class="fields">
-    <label for="content">Content</label><br />
+  <div class="fields right">
+    <label for="content">内容</label>
     <textarea id="content" name="content"></textarea>
   </div>
-  <p><input type="submit" value="Submit"></p>
+  <p class="button"><input type="submit" value="Submit"></p>
 </form>
 
