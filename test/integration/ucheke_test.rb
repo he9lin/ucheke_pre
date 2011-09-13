@@ -11,10 +11,10 @@ class UchekeTest < Test::Unit::TestCase
   context "successfully send an email" do
     setup do
       visit "/"
-      fill_in "Name", :with => "Superman"
-      fill_in "Email", :with => "superman@example.com"
-      fill_in "Content", :with => "I am superman!"
-      click_button "Submit"
+      fill_in "name", :with => "Superman"
+      fill_in "email", :with => "superman@example.com"
+      fill_in "content", :with => "I am superman!"
+      click_button "submit"
     end
 
     should "increase mails size" do
