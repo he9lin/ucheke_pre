@@ -64,12 +64,11 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 13, ../../scss/screen.scss */
+/* line 15, ../../scss/screen.scss */
 body {
   background: url(/images/tile.png) repeat;
-  padding-top: 70px;
 }
-/* line 16, ../../scss/screen.scss */
+/* line 17, ../../scss/screen.scss */
 body #flash_message {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -77,76 +76,105 @@ body #flash_message {
   -ms-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
+  width: 700px;
   margin: 0 auto;
-  padding: 5px 10px;
-  margin-bottom: 20px;
-  background-color: #c3d795;
-  border: 3px solid #81ae1a;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #20221f;
+  border: 3px solid #404040;
   text-align: center;
 }
-/* line 25, ../../scss/screen.scss */
+/* line 27, ../../scss/screen.scss */
+body footer#footer {
+  float: left;
+  width: 100%;
+  height: 164px;
+  background: url(/images/foot.png) repeat-x;
+}
+/* line 33, ../../scss/screen.scss */
 body #container {
-  width: 750px;
+  width: 900px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
-  color: #608213;
+  color: #737373;
+  border-top: 5px solid #b0d551;
 }
-/* line 29, ../../scss/screen.scss */
-body #container header#header h1 {
-  margin-top: 40px;
-  color: #eb7926;
-  font-size: 3em;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 80px;
+/* line 37, ../../scss/screen.scss */
+body #container header#header {
+  padding: 65px 0 45px 0;
+  height: 46px;
 }
-/* line 38, ../../scss/screen.scss */
+/* line 40, ../../scss/screen.scss */
+body #container header#header #logo {
+  float: left;
+  width: 200px;
+  height: 46px;
+  background: url(/images/header.png) top left no-repeat;
+  margin-right: 300px;
+}
+/* line 48, ../../scss/screen.scss */
+body #container header#header #social a {
+  display: block;
+  float: left;
+  line-height: 46px;
+  height: 46px;
+  font-size: 0.9em;
+  color: #404040;
+  text-decoration: none;
+}
+/* line 56, ../../scss/screen.scss */
+body #container header#header #social a:hover {
+  color: #b0d551;
+}
+/* line 58, ../../scss/screen.scss */
+body #container header#header #social .feeds {
+  float: left;
+  background: url(/images/header.png) -200px 0 no-repeat;
+  height: 46px;
+  width: 300px;
+}
+/* line 66, ../../scss/screen.scss */
+body #container section#content {
+  padding: 20px;
+}
+/* line 69, ../../scss/screen.scss */
 body #container h3.contact {
-  color: #81ae1a;
-  font-size: 1.2em;
+  width: 79px;
+  height: 19px;
+  background: url(/images/contact.png) top right no-repeat;
   margin-bottom: 24px;
+  text-indent: -5000px;
 }
-/* line 44, ../../scss/screen.scss */
+/* line 77, ../../scss/screen.scss */
 body form#mail-form {
   overflow: auto;
 }
-/* line 46, ../../scss/screen.scss */
+/* line 79, ../../scss/screen.scss */
 body form#mail-form label {
   display: block;
   font-size: 0.9em;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  padding-left: 3px;
+  padding-bottom: 8px;
+  color: #404040;
 }
-/* line 52, ../../scss/screen.scss */
+/* line 86, ../../scss/screen.scss */
 body form#mail-form p.button {
-  padding: 10px 0 20px 535px;
+  padding: 10px 0 20px 720px;
   float: left;
 }
-/* line 55, ../../scss/screen.scss */
+/* line 89, ../../scss/screen.scss */
 body form#mail-form p.button input[type=submit] {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  text-shadow: #aaaaaa 0px 0px 1px;
   cursor: pointer;
-  width: 120px;
-  line-height: 34px;
-  font-size: 1.2em;
-  font-weight: bold;
-  background-color: #c3d795;
-  color: #608213;
-  border: 1px solid #c3d795;
-  text-transform: uppercase;
+  width: 92px;
+  height: 30px;
+  line-height: 30px;
+  text-indent: -5000px;
+  font-size: 1em;
+  background: url(/images/btn92x30.png) top left no-repeat;
+  border: none;
 }
-/* line 67, ../../scss/screen.scss */
-body form#mail-form p.button input[type=submit]:hover {
-  color: #fff;
-}
-/* line 72, ../../scss/screen.scss */
+/* line 102, ../../scss/screen.scss */
 body form#mail-form input[type=text], body form#mail-form textarea {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -154,37 +182,45 @@ body form#mail-form input[type=text], body form#mail-form textarea {
   -ms-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
-  background-color: #c7da9c;
-  color: #5d7e12;
-  border: 1px solid #fff;
+  background-color: #252724;
+  color: #404040;
+  border: 1px solid #333333;
   font-size: 1em;
 }
-/* line 79, ../../scss/screen.scss */
+/* line 109, ../../scss/screen.scss */
 body form#mail-form textarea#content {
   margin: 0px;
-  padding: 5px;
-  width: 360px;
-  height: 120px;
-  background: #c7da9c url(/images/pencil_64.png) bottom right no-repeat;
+  padding: 10px;
+  width: 500px;
+  height: 91px;
+  background-color: #252724;
 }
-/* line 86, ../../scss/screen.scss */
+/* line 116, ../../scss/screen.scss */
 body form#mail-form input[type=text] {
   width: 206px;
-  height: 22px;
-  padding: 5px;
+  height: 25px;
+  padding: 5px 5px 5px 40px;
 }
-/* line 91, ../../scss/screen.scss */
+/* line 120, ../../scss/screen.scss */
+body form#mail-form input[type=text]#name {
+  background: #252724 url(/images/icons.png) 0 0 no-repeat;
+}
+/* line 123, ../../scss/screen.scss */
+body form#mail-form input[type=text]#email {
+  background: #252724 url(/images/icons.png) 0 -35px no-repeat;
+}
+/* line 127, ../../scss/screen.scss */
 body form#mail-form .fields {
   float: left;
 }
-/* line 93, ../../scss/screen.scss */
+/* line 129, ../../scss/screen.scss */
 body form#mail-form .fields.left {
   width: 250px;
   float: left;
   margin-right: 50px;
 }
-/* line 98, ../../scss/screen.scss */
+/* line 134, ../../scss/screen.scss */
 body form#mail-form .fields.right {
   float: left;
-  width: 450px;
+  width: 560px;
 }

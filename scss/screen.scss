@@ -2,43 +2,76 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/text-shadow";
 @import "blueprint/grid";
-$blueprint-container-size: 750px;
+$blueprint-container-size: 900px;
 $main-header-color: #eb7926;
-$font-color: #608213;
-$form-bg-color: #c7da9c;
-$dark-font-color: darken($font-color, 1%);
+$container-border-color: #b0d551;
+$font-color: #737373;
+$form-bg-color: #252724;
+$form-border-color: #333;
+$dark-font-color: darken($font-color, 20%);
 $light-font-color: lighten($font-color, 10%);
 $button-bg-color: darken($form-bg-color, 2%);
 
 body {
   background: url(/images/tile.png) repeat;
-  padding-top: 70px;
   #flash_message {
     @include border-radius;
+    width: 700px;
     margin: 0 auto;
-    padding: 5px 10px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-top: 10px;
     background-color: $button-bg-color;
-    border: 3px solid $light-font-color;
+    border: 3px solid $dark-font-color;
     text-align: center;
+  }
+  footer#footer {
+    float: left;
+    width: 100%;
+    height: 164px;
+    background: url(/images/foot.png) repeat-x;
   }
   #container {
     @include container;
     color: $font-color;
+    border-top: 5px solid $container-border-color;
     header#header {
-      h1 {
-        margin-top: 40px;
-        color: $main-header-color;
-        font-size: 3em;
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 80px;
+      padding: 65px 0 45px 0;
+      height: 46px;
+      #logo {
+        float: left;
+        width: 200px;
+        height: 46px;
+        background: url(/images/header.png) top left no-repeat;
+        margin-right: 300px;
+      }
+      #social {
+        a {
+          display: block;
+          float: left;
+          line-height: 46px;
+          height: 46px;
+          font-size: 0.9em;
+          color: $dark-font-color;
+          text-decoration: none;
+          &:hover { color: $container-border-color; }
+        }
+        .feeds {
+          float: left;
+          background: url(/images/header.png) -200px 0 no-repeat;
+          height: 46px;
+          width: 300px;
+        }
       }
     }
+    section#content {
+      padding: 20px;
+    }
     h3.contact { 
-      color: $light-font-color;
-      font-size: 1.2em;
+      width: 79px;
+      height: 19px;
+      background: url(/images/contact.png) top right no-repeat;
       margin-bottom: 24px;
+      text-indent: -5000px;
     }
   }
   form#mail-form {
@@ -46,26 +79,23 @@ body {
     label {
       display: block;
       font-size: 0.9em;
-      padding-left: 5px;
-      padding-bottom: 5px;
+      padding-left: 3px;
+      padding-bottom: 8px;
+      color: $dark-font-color;
     }
     p.button {
-      padding: 10px 0 20px 535px;
+      padding: 10px 0 20px 720px;
       float: left;
       input[type=submit] {
-        @include border-radius;
-        @include text-shadow;
         cursor: pointer;
-        width: 120px;
-        line-height: 34px;
-        font-size: 1.2em;
-        font-weight: bold;
-        background-color: $button-bg-color;
-        color: $font-color;
-        border: 1px solid $button-bg-color;
-        text-transform: uppercase;
+        width: 92px;
+        height: 30px;
+        line-height: 30px;
+        text-indent: -5000px;
+        font-size: 1em;
+        background: url(/images/btn92x30.png) top left no-repeat;
+        border: none;
         &:hover {
-          color: #fff;
         }
       }
     }
@@ -73,20 +103,26 @@ body {
       @include border-radius;
       background-color: $form-bg-color;
       color: $dark-font-color;
-      border: 1px solid #fff;
+      border: 1px solid $form-border-color;
       font-size: 1em;
     }
     textarea#content {
       margin: 0px;
-      padding: 5px;
-      width: 360px;
-      height: 120px;
-      background: $form-bg-color url(/images/pencil_64.png) bottom right no-repeat;
+      padding: 10px;
+      width: 500px;
+      height: 91px;
+      background-color: $form-bg-color; //url(/images/icons.png) top left no-repeat;
     }
     input[type=text] {
       width: 206px;
-      height: 22px;
-      padding: 5px;
+      height: 25px;
+      padding: 5px 5px 5px 40px;
+      &#name {
+        background: $form-bg-color url(/images/icons.png) 0 0 no-repeat;
+      }
+      &#email {
+        background: $form-bg-color url(/images/icons.png) 0 -35px no-repeat;
+      }
     }
     .fields {
       float: left;
@@ -97,7 +133,7 @@ body {
       }
       &.right {
         float: left;
-        width: $blueprint-container-size - 300px;
+        width: $blueprint-container-size - 300px - 40px;
       }
     }
   }

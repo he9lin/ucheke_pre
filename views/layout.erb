@@ -2,6 +2,16 @@
 <html>
   <head>
     <title>有车客</title>
+    <!--[if lt IE 9]>
+      <script type="text/javascript" >
+        document.createElement("nav");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("section");
+        document.createElement("aside");
+        document.createElement("article");
+      </script>
+    <![endif]-->
     <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
     <!--[if IE]>
@@ -11,13 +21,23 @@
   <body>
     <div id="container">
       <header id="header">
-        <img src="/images/carhead.png" />
-        <h1>有车客即将亮相</h1>
+        <div id="logo">
+        </div>
+        <div id="social">
+          <a href="http://www.weibo.com/ucheke">关注我们</a>
+          <div class="feeds"></div>
+        </div>
       </header>
+      <section id="banner">
+        <img src="/images/banner.png" />
+      </section>
       <% if flash_message %>
         <div id="flash_message"><%= flash_message %></div>
       <% end %>
-      <%= yield %>
+      <section id="content">
+        <%= yield %>
+      </section>
     </div>
+    <footer id="footer"></footer>
   </body>
 </html>
