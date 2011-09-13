@@ -159,22 +159,21 @@ body form#mail-form label {
   color: #404040;
 }
 /* line 86, ../../scss/screen.scss */
-body form#mail-form p.button {
+body form#mail-form .button {
   padding: 10px 0 20px 720px;
   float: left;
 }
 /* line 89, ../../scss/screen.scss */
-body form#mail-form p.button input[type=submit] {
+body form#mail-form .button input[type=submit] {
   cursor: pointer;
   width: 92px;
   height: 30px;
   line-height: 30px;
-  text-indent: -5000px;
   font-size: 1em;
   background: url(/images/btn92x30.png) top left no-repeat;
   border: none;
 }
-/* line 102, ../../scss/screen.scss */
+/* line 101, ../../scss/screen.scss */
 body form#mail-form input[type=text], body form#mail-form textarea {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -186,6 +185,10 @@ body form#mail-form input[type=text], body form#mail-form textarea {
   color: #404040;
   border: 1px solid #333333;
   font-size: 1em;
+}
+/* line 107, ../../scss/screen.scss */
+body form#mail-form input[type=text]:hover, body form#mail-form textarea:hover {
+  border-color: #404040;
 }
 /* line 109, ../../scss/screen.scss */
 body form#mail-form textarea#content {
@@ -199,27 +202,28 @@ body form#mail-form textarea#content {
 body form#mail-form input[type=text] {
   width: 206px;
   height: 25px;
+  line-height: 25px;
   padding: 5px 5px 5px 40px;
 }
-/* line 120, ../../scss/screen.scss */
+/* line 121, ../../scss/screen.scss */
 body form#mail-form input[type=text]#name {
   background: #252724 url(/images/icons.png) 0 0 no-repeat;
 }
-/* line 123, ../../scss/screen.scss */
+/* line 124, ../../scss/screen.scss */
 body form#mail-form input[type=text]#email {
   background: #252724 url(/images/icons.png) 0 -35px no-repeat;
 }
-/* line 127, ../../scss/screen.scss */
+/* line 128, ../../scss/screen.scss */
 body form#mail-form .fields {
   float: left;
 }
-/* line 129, ../../scss/screen.scss */
+/* line 130, ../../scss/screen.scss */
 body form#mail-form .fields.left {
   width: 250px;
   float: left;
   margin-right: 50px;
 }
-/* line 134, ../../scss/screen.scss */
+/* line 135, ../../scss/screen.scss */
 body form#mail-form .fields.right {
   float: left;
   width: 560px;
