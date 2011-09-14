@@ -9,11 +9,31 @@ class Ucheke < Sinatra::Base
   enable :sessions
   set :root, File.dirname(__FILE__)
 
+  def test_mode?
+    ENV['RACK_ENV'] == 'test'
+  end
+    
   def success_mail_message
-    if ENV['RACK_ENV'] == 'test'
+    if test_mode?
       "Message has been sent successfully"
     else
       "您的邮件已成功发送，感谢您的参与!"
+    end
+  end
+  
+  def blank_name_message
+    if test_mode?
+      "Name cannot be blank"
+    else
+      "名字不能为空"
+    end
+  end
+
+  def blank_content_message
+    if test_mode?
+      "Content cannot be blank"
+    else
+      "内容不能为空"
     end
   end
 
@@ -35,12 +55,18 @@ class Ucheke < Sinatra::Base
   end
 
   post '/mail' do
-    mail = Mail.new
-    mail.to      = MAILER_CONFIG[:email]
-    mail.from    = MAILER_CONFIG[:email]
-    mail.subject = "#{params[:name]} from #{params[:email]} has just sent this email"
-    mail.body    = params[:content]
-    mail.deliver
-    redirect_with_flash '/', success_mail_message
+    if params[:name].blank?
+      redirect_with_flash '/', blank_name_message
+    elsif params[:content].blank?
+      redirect_with_flash '/', blank_content_message
+    else
+      mail = Mail.new
+      mail.to      = MAILER_CONFIG[:email]
+      mail.from    = MAILER_CONFIG[:email]
+      mail.subject = "#{params[:name]} from #{params[:email]} has just sent this email"
+      mail.body    = params[:content]
+      mail.deliver
+      redirect_with_flash '/', success_mail_message
+    end
   end
 end
