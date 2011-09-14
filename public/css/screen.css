@@ -66,7 +66,7 @@ footer, header, hgroup, menu, nav, section {
 
 /* line 15, ../../scss/screen.scss */
 body {
-  background: url(/images/tile.png) repeat;
+  background: #111111 url(/images/tile.png) repeat;
 }
 /* line 17, ../../scss/screen.scss */
 body #flash_message {

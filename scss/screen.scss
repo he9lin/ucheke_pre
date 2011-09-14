@@ -13,7 +13,7 @@ $light-font-color: lighten($font-color, 10%);
 $button-bg-color: darken($form-bg-color, 2%);
 
 body {
-  background: url(/images/tile.png) repeat;
+  background: #111 url(/images/tile.png) repeat;
   #flash_message {
     @include border-radius;
     width: 700px;
