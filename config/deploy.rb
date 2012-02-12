@@ -11,6 +11,7 @@ require 'bundler/capistrano'
 set :application, 'ucheke_pre'
 set :domain,      '61.188.39.134' #ucheke.com  50.57.160.177 61.188.39.134 58.215.170.153
 set :project,     'ucheke_pre'
+set :port, '22000' ####
 
 set :user, 'deploy'
 
